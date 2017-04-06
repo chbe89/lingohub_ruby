@@ -62,22 +62,8 @@ module Lingohub::Command
     end
 
     def ask_for_credentials
-      puts "Enter your Lingohub credentials."
-
-      print "Email: "
-      user = ask
-
-
-      print "Password  (please leave blank if you want to use your API token): "
-      password = running_on_windows? ? ask_for_password_on_windows : ask_for_password
-
-      if password.empty?
-        print "API key: "
-        api_key = ask
-      else
-        api_key = retrieve_api_key(password, user)
-      end
-
+        user = "christopher.brecht@jamitlabs.com"
+        api_key = "5c34b078a3e00e04d4d35a4fbfe9db8368207285c9bf33f53d67cad350f1e479"
       [user, api_key]
     end
 
